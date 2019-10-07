@@ -6,6 +6,8 @@ class HomePage extends StatelessWidget{
 // Esto es otra forma de hacer el estilo en una sola linea pero para defirnilo en cualquier contenido. 
 final estiloTexto = TextStyle(fontSize: 25);
 
+final conteo = 10;
+
 
 @override
 Widget build(BuildContext context) {
@@ -21,7 +23,7 @@ Widget build(BuildContext context) {
          mainAxisAlignment: MainAxisAlignment.center,
          children: <Widget>[
            Text('Click Number', style: estiloTexto),
-           Text('0', style: estiloTexto)
+           Text('$conteo', style: estiloTexto)
 
 
             // Esto es una forma de trabajar en una sola linea 
@@ -30,6 +32,14 @@ Widget build(BuildContext context) {
            // Text('0', style: TextStyle(fontSize: 25),)
          ],
        )
+    ),
+//    floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked, ayuda a posicionar el boton
+    floatingActionButton: FloatingActionButton(
+      child: Icon(Icons.add_circle),
+      onPressed: () {
+        print('hola Mundo');
+        //conteo = conteo +1;
+      },
     ),
   );
 }
