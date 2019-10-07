@@ -52,19 +52,35 @@ int _conteo = 0;
       mainAxisAlignment: MainAxisAlignment.end,
       children: <Widget>[
             SizedBox(width: 30.0,),
-            FloatingActionButton(child: Icon(Icons.exposure_zero), onPressed: () {},),
+            FloatingActionButton(child: Icon(Icons.exposure_zero), onPressed: _reset,),
             Expanded(child: SizedBox()),
-            FloatingActionButton(child: Icon(Icons.remove), onPressed: () {},),
+            FloatingActionButton(child: Icon(Icons.remove), onPressed: _less,),
             SizedBox(width: 5.0,),
-            FloatingActionButton(child: Icon(Icons.add), onPressed: () {},),
+            FloatingActionButton(child: Icon(Icons.add), onPressed: _add),
 
 
       ],
     ); 
-    
-    
-    
   }
+
+
+    void _add() {
+
+        setState(() => _conteo++ );
+    /*  
+      setState(() {
+        _conteo++;  
+      });
+      */
+    }
+
+    void _less() {
+      setState(() => _conteo-- );
+    }
+
+    void _reset(){
+      setState(() => _conteo = 0);
+    }
 
 
 }
